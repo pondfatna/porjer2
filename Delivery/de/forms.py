@@ -12,3 +12,6 @@ class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = CustomUser
         fields = ['username', 'password']
+
+class OrderForm(forms.Form):
+    quantity = forms.IntegerField(min_value=1, label='Quantity')

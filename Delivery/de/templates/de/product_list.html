@@ -1,0 +1,11 @@
+<!-- shop/product_list.html -->
+<h2>Product List</h2>
+<ul>
+  {% for product in products %}
+    <li>
+      <img src="{{ product.images.url }}" alt="{{ product.name }}" width="100" height="100"><br>
+      {{ product.name }} - ${{ product.price }}
+      <a href="{% url 'order_product' product.id %}">Order</a>
+    </li>
+  {% endfor %}
+</ul>
